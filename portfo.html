@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subha B | Public Speaker & AI Student</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #0a0a0a, #1c1c1c);
+      color: #f0f0f0;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: linear-gradient(135deg, #ff512f, #dd2476);
+      color: #fff;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
+      font-weight: 300;
+    }
+
+    .container {
+      display: flex;
+      gap: 2rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 2rem;
+    }
+
+    .container::-webkit-scrollbar {
+      height: 10px;
+    }
+
+    .container::-webkit-scrollbar-thumb {
+      background: #ff4081;
+      border-radius: 10px;
+    }
+
+    .card {
+      min-width: 320px;
+      max-width: 350px;
+      background: #1e1e1e;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+      transform-style: preserve-3d;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .card:hover {
+      transform: perspective(1000px) rotateY(10deg) rotateX(5deg) scale(1.05);
+      box-shadow: 0 20px 50px rgba(221, 36, 118, 0.6);
+    }
+
+    .card h2 {
+      color: #ff4081;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    ul li {
+      margin: 0.5rem 0;
+    }
+
+    .contact {
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    .contact a {
+      background: linear-gradient(135deg, #ff512f, #dd2476);
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 5px 20px rgba(255, 64, 129, 0.4);
+      transition: transform 0.3s;
+    }
+
+    .contact a:hover {
+      transform: scale(1.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      border-top: 1px solid #333;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Subha B</h1>
+    <p>Public Speaker | Motivational Coach | B.Sc AI & ML Student</p>
+    <p>KPR College of Arts, Science and Research</p>
+  </header>
+
+  <main class="container">
+    <!-- About -->
+    <div class="card">
+      <h2>About Me</h2>
+      <p>
+        Hello! I’m <strong>Subha B</strong>, a passionate <strong>Public Speaker and Motivational Coach</strong> 
+        with a background in <strong>Artificial Intelligence & Machine Learning</strong>.  
+        My mission is to inspire students, professionals, and communities to embrace innovation, confidence, and growth mindset.
+      </p>
+    </div>
+
+    <!-- Speaking Topics -->
+    <div class="card">
+      <h2>Speaking Topics</h2>
+      <ul>
+        <li>🚀 Growth Mindset & Overcoming Challenges</li>
+        <li>🎯 The Future of AI & Technology</li>
+        <li>🌍 Youth Empowerment & Leadership</li>
+        <li>💡 Turning Failures into Opportunities</li>
+      </ul>
+    </div>
+
+    <!-- Projects -->
+    <div class="card">
+      <h2>AI & ML Projects</h2>
+      <ul>
+        <li>🤖 <strong>AI Chatbot</strong> – Conversational bot for student queries.</li>
+        <li>📰 <strong>Fake News Detector</strong> – ML model to detect misinformation.</li>
+        <li>🖼️ <strong>Image Classifier</strong> – CNN for accurate image recognition.</li>
+      </ul>
+    </div>
+
+    <!-- Achievements -->
+    <div class="card">
+      <h2>Achievements</h2>
+      <ul>
+        <li>🏆 Winner of Inter-College Public Speaking Contest 2024.</li>
+        <li>🎤 Delivered motivational talks at 10+ student events.</li>
+        <li>📊 Research paper on "AI for Social Good".</li>
+        <li>🌟 Certified in Machine Learning & Public Speaking.</li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- Contact -->
+  <div class="contact">
+    <a href="mailto:subhasubha03005@gmail.com">Contact Me</a>
+  </div>
+
+  <footer>
+    © 2025 Subha B | Inspiring Minds, Empowering Futures
+  </footer>
+
+  <script>
+    // 3D tilt effect
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * 10;
+        const rotateY = ((x - centerX) / centerX) * 10;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = "perspective(1000px) rotateX(0) rotateY(0) scale(1)";
+      });
+    });
+  </script>
+
+</body>
+</html>
